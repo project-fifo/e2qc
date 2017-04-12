@@ -21,9 +21,10 @@ ifeq ($(UNAME_SYS), Darwin)
 	CXXFLAGS ?= -O3 -arch x86_64 -finline-functions -Wall -DOS_DARWIN
 	LDFLAGS ?= -arch x86_64 -flat_namespace -undefined suppress
 else ifeq ($(UNAME_SYS), FreeBSD)
-	CC ?= cc
-	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes -DOS_FREEBSD
-	CXXFLAGS ?= -O3 -finline-functions -Wall -DOS_FREEBSD
+	CC ?= clang
+	CXX = clang++
+	CFLAGS ?= -O3 -std=c99 -Wall -Wmissing-prototypes -DOS_FREEBSD
+	CXXFLAGS ?= -O3 -Wall -DOS_FREEBSD
 else ifeq ($(UNAME_SYS), Linux)
 	CC ?= gcc
 	CFLAGS ?= -O3 -std=c99 -finline-functions -Wall -Wmissing-prototypes -DOS_LINUX
