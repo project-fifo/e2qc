@@ -743,7 +743,8 @@ get(ErlNifEnv *env, int argc, const ERL_NIF_TERM argv[])
 		__sync_add_and_fetch(&c->hit, 1);
 
 		tid = enif_thread_self();
-		HASH_SFH(&tid, sizeof(ErlNifTid), N_INCR_BKT, hashv, bkt);
+		HASH_SFH(&tid, sizeof(ErlNifTid),hashv);
+        HASH_TO_BKT(hashv, N_INCR_BKT, bkt);   
 		enif_mutex_lock(c->incr_lock[bkt]);
 		TAILQ_INSERT_TAIL(&(c->incr_head[bkt]), in, entry);
 		enif_mutex_unlock(c->incr_lock[bkt]);
