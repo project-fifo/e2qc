@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 _build
 _checkouts
 .rebar3
@@ -21,3 +22,6 @@ data
 *.iml
 *.so
 priv/
+c_src/nif.d
+c_src/nif.o
+_build

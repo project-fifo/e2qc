@@ -1,7 +1,7 @@
 {application, e2qc,
  [
   {description, "2q cache"},
-  {vsn, "1.1.0"},
+  {vsn, "1.2.0"},
   {registered, []},
   {included_applications, [
   ]},
@@ -10,5 +10,9 @@
                   stdlib
                  ]},
   {start_phases, []},
-  {env, []}
+  {env, []},
+  {maintainers, ["Alex Wilson", "Heinz N. Gies"]},
+  {licenses,["BSD"]},
+  {links,[{"Github",
+           "https://github.com/project-fifo/e2qc"}]}
  ]}.
