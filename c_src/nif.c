@@ -33,11 +33,11 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <time.h>
-#if defined(OS_LINUX)
-#include <linux/time.h>
+#if !defined(OS_LINUX)
+#  include <time.h>
+#else
+#  include <linux/time.h>
 #endif
-
 #include <math.h>
 
 #include "queue.h"
